@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Amor e Arte Papelaria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Angelina&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-heart"></i> Feitos com amor</span>
+                <span><i class="fas fa-star"></i> Personalizados para você</span>
+                <span><i class="fas fa-shield-alt"></i> Compra 100% segura</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </a>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHECKOUT PAGE -->
+    <section class="cart-page">
+        <div class="container">
+            <div class="section-header">
+                <h2>FINALIZAR COMPRA</h2>
+                <p>Preencha seus dados de entrega para concluir o pedido</p>
+            </div>
+
+            <div class="cart-content">
+                <div class="cart-items-section">
+                    <div class="login-container">
+                        <h3>DADOS DE ENTREGA</h3>
+                        <form id="checkout-form" onsubmit="handleCheckout(event)">
+                            
+                            <!-- DADOS PESSOAIS -->
+                            <div class="form-group">
+                                <label for="checkout-name">Nome Completo *</label>
+                                <input type="text" id="checkout-name" required placeholder="Digite seu nome completo" minlength="3">
+                                <span class="field-error" id="checkout-name-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="checkout-email">E-mail *</label>
+                                <input type="email" id="checkout-email" required placeholder="seu@email.com">
+                                <span class="field-error" id="checkout-email-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="checkout-phone">Telefone/WhatsApp *</label>
+                                <input type="tel" id="checkout-phone" required placeholder="(12) 99999-9999" pattern="^(\(?\d{2}\)?\s?)?\d{4,5}-?\d{4}$">
+                                <span class="field-error" id="checkout-phone-error"></span>
+                            </div>
+
+                            <!-- ENDEREÇO -->
+                            <div class="form-group">
+                                <label for="checkout-cep">CEP *</label>
+                                <div style="display: flex; gap: 10px;">
+                                    <input type="text" id="checkout-cep" required placeholder="00000-000" maxlength="9" onblur="fetchAddressByCEP()">
+                                    <button type="button" class="btn-secondary" onclick="fetchAddressByCEP()" style="white-space: nowrap;">
+                                        <i class="fas fa-search"></i> Buscar
+                                    </button>
+                                </div>
+                                <span class="field-error" id="checkout-cep-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="checkout-street">Rua/Logradouro *</label>
+                                <input type="text" id="checkout-street" required placeholder="Nome da rua">
+                                <span class="field-error" id="checkout-street-error"></span>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <div class="form-group">
+                                    <label for="checkout-number">Número *</label>
+                                    <input type="text" id="checkout-number" required placeholder="123">
+                                    <span class="field-error" id="checkout-number-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkout-complement">Complemento</label>
+                                    <input type="text" id="checkout-complement" placeholder="Apto, Bloco, etc.">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="checkout-neighborhood">Bairro *</label>
+                                <input type="text" id="checkout-neighborhood" required placeholder="Nome do bairro">
+                                <span class="field-error" id="checkout-neighborhood-error"></span>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 15px;">
+                                <div class="form-group">
+                                    <label for="checkout-city">Cidade *</label>
+                                    <input type="text" id="checkout-city" required placeholder="Nome da cidade">
+                                    <span class="field-error" id="checkout-city-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkout-state">UF *</label>
+                                    <input type="text" id="checkout-state" required placeholder="SP" maxlength="2" style="text-transform: uppercase;">
+                                    <span class="field-error" id="checkout-state-error"></span>
+                                </div>
+                            </div>
+
+                            <!-- FORMA DE PAGAMENTO -->
+                            <h3 style="margin-top: 30px; margin-bottom: 20px;">FORMA DE PAGAMENTO</h3>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="radio" name="payment-method" value="pix" required checked>
+                                    <i class="fas fa-qrcode"></i> PIX
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="radio" name="payment-method" value="cartao">
+                                    <i class="fas fa-credit-card"></i> Cartão de Crédito/Débito
+                                </label>
+                            </div>
+
+                            <!-- OBSERVAÇÕES -->
+                            <div class="form-group">
+                                <label for="checkout-notes">Observações do Pedido</label>
+                                <textarea id="checkout-notes" rows="3" placeholder="Alguma observação adicional sobre o pedido" maxlength="500"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-full btn-large">
+                                <i class="fab fa-whatsapp"></i> FINALIZAR PEDIDO VIA WHATSAPP
+                            </button>
+                            <a href="carrinho.html" class="btn-secondary btn-full"><i class="fas fa-arrow-left"></i> VOLTAR AO CARRINHO</a>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="cart-summary-section">
+                    <div class="cart-summary">
+                        <h3>RESUMO DO PEDIDO</h3>
+                        <div id="checkout-items"></div>
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Frete</span>
+                            <span id="checkout-shipping">R$ 0,00</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total</span>
+                            <span id="checkout-total">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Amor e Arte Papelaria</h3>
+                    </div>
+                    <p>Artigos religiosos personalizados com amor e fé.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Nossos Produtos</a></li>
+                        <li><a href="#">Personalizados</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (12) 99999-9999</li>
+                        <li><i class="fab fa-whatsapp"></i> (12) 99999-9999</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">Como comprar</a></li>
+                        <li><a href="#">Formas de pagamento</a></li>
+                        <li><a href="#">Trocas e devoluções</a></li>
+                        <li><a href="#">Política de privacidade</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-barcode"></i>
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="security">
+                        <p><i class="fas fa-lock"></i> Site 100% seguro</p>
+                        <p><i class="fas fa-shield-alt"></i> Seus dados protegidos</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amor e Arte Papelaria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-api.js"></script>
+    <script src="js/cart-api.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Comprar - Amor e Arte Papelaria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Angelina&family=Dancing+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-heart"></i> Feitos com amor</span>
+                <span><i class="fas fa-star"></i> Personalizados para você</span>
+                <span><i class="fas fa-shield-alt"></i> Compra 100% segura</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="pages/cadastro.html" class="header-action-item">
+                        <i class="fas fa-user"></i>
+                        <span>Minha Conta</span>
+                    </a>
+                    <a href="carrinho.html" class="header-action-item cart-action">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrinho</span>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html" id="produtos-link">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <section class="help-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Como Comprar</h1>
+                <p>Aprenda como realizar sua compra de forma simples e segura</p>
+            </div>
+            
+            <div class="help-content">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Escolha o produto desejado</h3>
+                        <p>Navegue pelas categorias e encontre o produto perfeito para você. Utilize nossa barra de busca para encontrar itens específicos.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Clique em "Adicionar ao Carrinho"</h3>
+                        <p>Após escolher o produto, selecione as opções de personalização desejadas e adicione ao carrinho de compras.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Finalize seu pedido informando seus dados</h3>
+                        <p>Preencha seus dados de entrega e contato. Certifique-se de que todas as informações estão corretas.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Escolha a forma de pagamento</h3>
+                        <p>Selecione entre PIX, cartão de crédito ou débito. Todas as formas de pagamento são seguras.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Acompanhe seu pedido</h3>
+                        <p>Após a confirmação do pagamento, iniciaremos a produção e o envio do seu pedido. Você receberá atualizações sobre o andamento da compra.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="help-cta">
+                <a href="produtos.html" class="btn-primary">Começar a Comprar</a>
+                <a href="contato.html" class="btn-secondary">Precisa de Ajuda?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="sobre.html">Quem Somos</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="#">Personalizados</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Central de Atendimento</h4>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> (12) 99659-1618</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                        <li><i class="fas fa-envelope"></i> laissgeronimo@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ajuda ao Cliente</h4>
+                    <ul>
+                        <li><a href="como-comprar.html">Como Comprar</a></li>
+                        <li><a href="formas-pagamento.html">Formas de Pagamento</a></li>
+                        <li><a href="trocas-devolucoes.html">Trocas e Devoluções</a></li>
+                        <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Segurança e Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa" title="Visa"></i>
+                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fas fa-qrcode" title="PIX"></i>
+                        <i class="fas fa-barcode" title="Boleto"></i>
+                    </div>
+                    <div class="security-badges">
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Compra Segura</span>
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Dados Protegidos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Amor e Arte Papelaria. Todos os direitos reservados.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Termos de Uso</a>
+                        <a href="politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-api.js"></script>
+    <script src="js/auth-api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

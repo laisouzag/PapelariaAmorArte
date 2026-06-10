@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Amor e Arte Papelaria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Angelina&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-heart"></i> Feitos com amor</span>
+                <span><i class="fas fa-star"></i> Personalizados para você</span>
+                <span><i class="fas fa-shield-alt"></i> Compra 100% segura</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </a>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">TODAS CATEGORIAS</a></li>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html">Produtos</a></li>
+                        <li><a href="index.html">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CART PAGE -->
+    <section class="cart-page">
+        <div class="container">
+            <div class="section-header">
+                <h2>SEU CARRINHO</h2>
+                <p>Revise seus produtos antes de finalizar a compra</p>
+            </div>
+
+            <div class="cart-content">
+                <div class="cart-items-section">
+                    <div class="cart-items" id="cart-items-container">
+                        <div class="empty-cart" id="empty-cart-message">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Seu carrinho está vazio</h3>
+                            <p>Adicione produtos para continuar comprando</p>
+                            <a href="index.html" class="btn-primary">VER PRODUTOS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-summary-section">
+                    <div class="cart-summary">
+                        <h3>RESUMO DO PEDIDO</h3>
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span id="subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Frete</span>
+                            <span id="shipping">R$ 0,00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Desconto</span>
+                            <span id="discount">- R$ 0,00</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total</span>
+                            <span id="total">R$ 0,00</span>
+                        </div>
+
+                        <button class="btn-primary btn-full btn-large" onclick="checkout()">FINALIZAR COMPRA</button>
+                        <a href="index.html" class="btn-secondary btn-full"><i class="fas fa-arrow-left"></i> CONTINUAR COMPRANDO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Amor e Arte Papelaria</h3>
+                    </div>
+                    <p>Artigos religiosos personalizados com amor e fé.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Nossos Produtos</a></li>
+                        <li><a href="#">Personalizados</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (12) 99999-9999</li>
+                        <li><i class="fab fa-whatsapp"></i> (12) 99999-9999</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">Como comprar</a></li>
+                        <li><a href="#">Formas de pagamento</a></li>
+                        <li><a href="#">Trocas e devoluções</a></li>
+                        <li><a href="#">Política de privacidade</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-barcode"></i>
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="security">
+                        <p><i class="fas fa-lock"></i> Site 100% seguro</p>
+                        <p><i class="fas fa-shield-alt"></i> Seus dados protegidos</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amor e Arte Papelaria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-api.js"></script>
+    <script src="js/auth-api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart-api.js"></script>
+</body>
+</html>

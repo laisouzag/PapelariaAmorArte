@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizar Produto - Amor e Arte Papelaria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Angelina&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-heart"></i> Feitos com amor</span>
+                <span><i class="fas fa-star"></i> Personalizados para você</span>
+                <span><i class="fas fa-shield-alt"></i> Compra 100% segura</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </a>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PERSONALIZATION PAGE -->
+    <section class="login-page">
+        <div class="container">
+            <div class="login-container" style="max-width: 800px;">
+                <h2>PERSONALIZAR PRODUTO</h2>
+                <p class="form-intro">Adicione seus detalhes personalizados ao produto</p>
+                
+                <form id="personalization-form" onsubmit="handlePersonalization(event)">
+                    <div class="form-group">
+                        <label for="product-name">Produto *</label>
+                        <input type="text" id="product-name" readonly placeholder="Nome do produto será preenchido automaticamente">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custom-name">Nome para Personalização *</label>
+                        <input type="text" id="custom-name" required placeholder="Digite o nome que deseja no produto" minlength="2">
+                        <span class="field-error" id="custom-name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custom-saint">Santo de Devoção</label>
+                        <input type="text" id="custom-saint" placeholder="Digite o santo de sua devoção (opcional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custom-color">Cor Preferida</label>
+                        <input type="text" id="custom-color" placeholder="Digite a cor desejada (opcional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cover-type">Tipo de Capa</label>
+                        <select id="cover-type">
+                            <option value="">Selecione o tipo de capa (opcional)</option>
+                            <option value="normal">Normal</option>
+                            <option value="holografica">Holográfica</option>
+                            <option value="brilho">Brilho</option>
+                            <option value="fosca">Fosca</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-notes">Observações Adicionais</label>
+                        <textarea id="additional-notes" rows="4" placeholder="Outras observações sobre a personalização" maxlength="300" style="resize: none; height: 100px;"></textarea>
+                        <small>Máximo 300 caracteres</small>
+                    </div>
+
+                    <div class="form-group" style="background-color: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <p style="margin: 0; color: #856404; font-size: 14px;">
+                            <i class="fas fa-exclamation-triangle"></i> <strong>Por favor, revise cuidadosamente todas as informações acima antes de adicionar ao carrinho.</strong>
+                        </p>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">ADICIONAR AO CARRINHO</button>
+                    <a href="index.html" class="btn-secondary btn-full"><i class="fas fa-arrow-left"></i> VOLTAR</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Amor e Arte Papelaria</h3>
+                    </div>
+                    <p>Artigos religiosos personalizados com amor e fé.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Nossos Produtos</a></li>
+                        <li><a href="#">Personalizados</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (12) 99999-9999</li>
+                        <li><i class="fab fa-whatsapp"></i> (12) 99999-9999</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">Como comprar</a></li>
+                        <li><a href="#">Formas de pagamento</a></li>
+                        <li><a href="#">Trocas e devoluções</a></li>
+                        <li><a href="#">Política de privacidade</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-barcode"></i>
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="security">
+                        <p><i class="fas fa-lock"></i> Site 100% seguro</p>
+                        <p><i class="fas fa-shield-alt"></i> Seus dados protegidos</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amor e Arte Papelaria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-api.js"></script>
+    <script src="js/personalizacao.js"></script>
+</body>
+</html>

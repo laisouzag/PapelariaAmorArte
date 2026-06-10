@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Amor e Arte Papelaria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Angelina&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-heart"></i> Feitos com amor</span>
+                <span><i class="fas fa-star"></i> Personalizados para você</span>
+                <span><i class="fas fa-shield-alt"></i> Compra 100% segura</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </a>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Início</a>
+                        <li><a href="produtos.html">Produtos</a>
+                        <li><a href="sobre.html">Sobre</a>
+                        <li><a href="contato.html">Contato</a>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CUSTOMER DASHBOARD -->
+    <section class="customer-dashboard" style="background: linear-gradient(135deg, #FFC1E3 0%, #FFB6D9 25%, #E8A8D1 50%, #D4A8E8 75%, #B8D4F8 100%); padding: 60px 0; min-height: calc(100vh - 400px);">
+        <div class="container">
+            <div class="dashboard-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <div style="text-align: center;">
+                    <h2 style="color: #333; margin: 0;">MINHA CONTA</h2>
+                    <p style="color: #555; margin: 5px 0 0 0;">Bem-vindo(a) à sua área de cliente</p>
+                </div>
+                <button onclick="logout()" class="btn-primary" style="padding: 8px 20px; font-size: 14px;">
+                    Sair
+                </button>
+            </div>
+
+            <div class="dashboard-content" style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px;">
+                <!-- Customer Info Form -->
+                <div class="customer-info-form" style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                    <h3 style="margin-bottom: 25px; color: #e91e63; font-size: 20px;">
+                        <i class="fas fa-user-edit" style="margin-right: 10px;"></i> Meus Dados
+                    </h3>
+                    <form id="customer-form" onsubmit="handleCustomerUpdate(event)">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-name" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Nome Completo *</label>
+                            <input type="text" id="customer-name" required placeholder="Seu nome completo" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-email" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">E-mail *</label>
+                            <input type="email" id="customer-email" required placeholder="seu@email.com" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-phone" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Telefone</label>
+                            <input type="tel" id="customer-phone" placeholder="(12) 99999-9999" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-cpf" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">CPF</label>
+                            <input type="text" id="customer-cpf" placeholder="000.000.000-00" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-cep" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">CEP</label>
+                            <input type="text" id="customer-cep" placeholder="00000-000" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-address" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Endereço</label>
+                            <input type="text" id="customer-address" placeholder="Rua, número, complemento" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-neighborhood" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Bairro</label>
+                            <input type="text" id="customer-neighborhood" placeholder="Bairro" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-city" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Cidade</label>
+                            <input type="text" id="customer-city" placeholder="Cidade" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="customer-state" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Estado</label>
+                            <select id="customer-state" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 14px; transition: border-color 0.3s ease; background: white;">
+                                <option value="">Selecione</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="PR">Paraná</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="BA">Bahia</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="GO">Goiás</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="PA">Pará</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="PI">Piauí</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="AC">Acre</option>
+                                <option value="AP">Amapá</option>
+                                <option value="RR">Roraima</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 14px; background: #e91e63; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-save" style="margin-right: 8px;"></i> Salvar Alterações
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Orders Section -->
+                <div class="orders-section" style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                    <h3 style="margin-bottom: 25px; color: #e91e63; font-size: 20px;">
+                        <i class="fas fa-shopping-bag" style="margin-right: 10px;"></i> Meus Pedidos
+                    </h3>
+                    <div id="orders-container">
+                        <p>Carregando pedidos...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Amor e Arte Papelaria</h3>
+                    </div>
+                    <p>Artigos religiosos personalizados com amor e fé.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Nossos Produtos</a></li>
+                        <li><a href="#">Personalizados</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (12) 99999-9999</li>
+                        <li><i class="fab fa-whatsapp"></i> (12) 99999-9999</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">Como comprar</a></li>
+                        <li><a href="#">Formas de pagamento</a></li>
+                        <li><a href="#">Trocas e devoluções</a></li>
+                        <li><a href="#">Política de privacidade</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-barcode"></i>
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="security">
+                        <p><i class="fas fa-lock"></i> Site 100% seguro</p>
+                        <p><i class="fas fa-shield-alt"></i> Seus dados protegidos</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amor e Arte Papelaria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth-api.js"></script>
+    <script src="js/customer-dashboard.js"></script>
+</body>
+</html>

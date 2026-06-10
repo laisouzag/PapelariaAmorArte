@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalização - Amor e Arte Papelaria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Angelina&family=Dancing+Script:wght@400;700&family=Pacifico&family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fas fa-heart"></i> Feitos com amor</span>
+                <span><i class="fas fa-star"></i> Personalizados para você</span>
+                <span><i class="fas fa-shield-alt"></i> Compra 100% segura</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="pages/cadastro.html" class="header-action-item">
+                        <i class="fas fa-user"></i>
+                        <span>Minha Conta</span>
+                    </a>
+                    <a href="carrinho.html" class="header-action-item cart-action">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrinho</span>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html" id="produtos-link">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PERSONALIZATION PAGE -->
+    <section class="personalization-page">
+        <div class="container">
+            <div class="section-header">
+                <h2>PERSONALIZE SEU PRODUTO</h2>
+                <p>Crie algo único e especial</p>
+            </div>
+
+            <div class="personalization-content">
+                <div class="personalization-form-section">
+                    <div class="personalization-form">
+                        <h3>Configure sua personalização</h3>
+                        
+                        <div class="form-group">
+                            <label for="product-select">Selecione o Produto</label>
+                            <select id="product-select" class="form-control">
+                                <option value="">Escolha um produto...</option>
+                                <option value="caderno">Caderno Personalizado</option>
+                                <option value="agenda">Agenda Personalizada</option>
+                                <option value="terco">Terço Personalizado</option>
+                                <option value="bloco">Bloco de Notas Personalizado</option>
+                                <option value="calendario">Calendário Personalizado</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="custom-name">Nome</label>
+                            <input type="text" id="custom-name" class="form-control" placeholder="Digite o nome..." maxlength="30">
+                            <small class="form-hint">Máximo 30 caracteres</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="custom-message">Mensagem (Opcional)</label>
+                            <textarea id="custom-message" class="form-control" rows="3" placeholder="Digite uma mensagem especial..." maxlength="100"></textarea>
+                            <small class="form-hint">Máximo 100 caracteres</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="font-select">Escolha a Fonte</label>
+                            <select id="font-select" class="form-control">
+                                <option value="Pacifico">Pacifico</option>
+                                <option value="Dancing Script">Dancing Script</option>
+                                <option value="Great Vibes">Great Vibes</option>
+                                <option value="Playfair Display">Playfair Display</option>
+                                <option value="Angelina">Angelina</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Escolha a Cor</label>
+                            <div class="color-options">
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="#E91E63" checked>
+                                    <span class="color-circle" style="background-color: #E91E63;"></span>
+                                    <span class="color-name">Rosa</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="#2196F3">
+                                    <span class="color-circle" style="background-color: #2196F3;"></span>
+                                    <span class="color-name">Azul</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="#9C27B0">
+                                    <span class="color-circle" style="background-color: #9C27B0;"></span>
+                                    <span class="color-name">Roxo</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="#4CAF50">
+                                    <span class="color-circle" style="background-color: #4CAF50;"></span>
+                                    <span class="color-name">Verde</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="#FF9800">
+                                    <span class="color-circle" style="background-color: #FF9800;"></span>
+                                    <span class="color-name">Laranja</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="#333333">
+                                    <span class="color-circle" style="background-color: #333333;"></span>
+                                    <span class="color-name">Preto</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image-upload">Upload de Imagem (Opcional)</label>
+                            <div class="file-upload">
+                                <input type="file" id="image-upload" accept="image/*" class="file-input">
+                                <label for="image-upload" class="file-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Escolher Arquivo</span>
+                                </label>
+                                <span class="file-name" id="file-name">Nenhum arquivo selecionado</span>
+                            </div>
+                            <small class="form-hint">Formatos aceitos: JPG, PNG (Máx. 5MB)</small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn-primary btn-large" onclick="addToCart()">
+                                <i class="fas fa-shopping-cart"></i> ADICIONAR AO CARRINHO
+                            </button>
+                            <a href="produtos.html" class="btn-secondary btn-full">
+                                <i class="fas fa-arrow-left"></i> VOLTAR PARA PRODUTOS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personalization-preview-section">
+                    <div class="preview-card">
+                        <h3>Pré-visualização</h3>
+                        <div class="preview-container" id="preview-container">
+                            <div class="preview-product" id="preview-product">
+                                <div class="preview-image-container">
+                                    <img src="img/Terços/TerçoRoxo.png" alt="Produto" id="preview-img">
+                                </div>
+                                <div class="preview-text-container">
+                                    <div class="preview-name" id="preview-name">Seu Nome</div>
+                                    <div class="preview-message" id="preview-message">Sua mensagem especial aqui</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-info">
+                            <p><i class="fas fa-info-circle"></i> Esta é uma pré-visualização aproximada do produto final.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="sobre.html">Quem Somos</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="#">Personalizados</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Central de Atendimento</h4>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> (12) 99659-1618</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                        <li><i class="fas fa-envelope"></i> laissgeronimo@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ajuda ao Cliente</h4>
+                    <ul>
+                        <li><a href="#">Como Comprar</a></li>
+                        <li><a href="#">Formas de Pagamento</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Segurança e Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa" title="Visa"></i>
+                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fas fa-qrcode" title="PIX"></i>
+                        <i class="fas fa-barcode" title="Boleto"></i>
+                    </div>
+                    <div class="security-badges">
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Compra Segura</span>
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Dados Protegidos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Amor e Arte Papelaria. Todos os direitos reservados.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Termos de Uso</a>
+                        <a href="#">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-api.js"></script>
+    <script src="js/auth-api.js"></script>
+    <script src="js/personalization.js"></script>
+</body>
+</html>

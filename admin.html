@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Amor e Arte Papelaria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Angelina&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ADMIN HEADER -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-content">
+                <div class="admin-logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Papelaria Amor e Arte Logo">
+                    </a>
+                    <h1>Painel Administrativo</h1>
+                </div>
+                <button class="btn-logout" onclick="adminLogout()">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ADMIN NAVIGATION -->
+    <nav class="admin-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active" onclick="showSection('products')"><i class="fas fa-box"></i> Produtos</a></li>
+                <li><a href="#" onclick="showSection('orders')"><i class="fas fa-shopping-bag"></i> Pedidos</a></li>
+                <li><a href="#" onclick="showSection('customers')"><i class="fas fa-users"></i> Clientes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ADMIN CONTENT -->
+    <section class="admin-content">
+        <div class="container">
+            
+            <!-- PRODUCTS SECTION -->
+            <div class="admin-section active" id="products-section">
+                <div class="section-header">
+                    <h2>GERENCIAR PRODUTOS</h2>
+                    <button class="btn-primary" onclick="openProductModal()">
+                        <i class="fas fa-plus"></i> Adicionar Produto
+                    </button>
+                </div>
+                
+                <div class="products-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body">
+                            <!-- Products will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ORDERS SECTION -->
+            <div class="admin-section" id="orders-section">
+                <div class="section-header">
+                    <h2>PEDIDOS REALIZADOS</h2>
+                </div>
+                
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Data</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table-body">
+                            <!-- Orders will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CUSTOMERS SECTION -->
+            <div class="admin-section" id="customers-section">
+                <div class="section-header">
+                    <h2>CLIENTES CADASTRADOS</h2>
+                </div>
+                
+                <div class="customers-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
+                                <th>CPF</th>
+                                <th>Data de Cadastro</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customers-table-body">
+                            <!-- Customers will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Adicionar Produto</h3>
+                <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            </div>
+            <form id="product-form" onsubmit="handleProductSubmit(event)">
+                <input type="hidden" id="product-id">
+                <div class="form-group">
+                    <label for="product-name">Nome do Produto</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Categoria</label>
+                    <select id="product-category" required>
+                        <option value="">Selecione...</option>
+                        <option value="Agendas">Agendas</option>
+                        <option value="Terços">Terços</option>
+                        <option value="Cadernos">Cadernos</option>
+                        <option value="Chaveiros">Chaveiros</option>
+                        <option value="Calendários">Calendários</option>
+                        <option value="Blocos">Blocos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Preço (R$)</label>
+                    <input type="number" id="product-price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Descrição</label>
+                    <textarea id="product-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">URL da Imagem</label>
+                    <input type="text" id="product-image" placeholder="img/produto.png" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeProductModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ORDER DETAILS MODAL -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detalhes do Pedido</h3>
+                <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+            </div>
+            <div id="order-details">
+                <!-- Order details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/data-api.js"></script>
+    <script src="js/auth-api.js"></script>
+    <script src="js/admin-api.js"></script>
+</body>
+</html>
